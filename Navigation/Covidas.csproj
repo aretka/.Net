@@ -7,4 +7,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="Store\NavigationStore.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+  </ItemGroup>
+
 </Project>

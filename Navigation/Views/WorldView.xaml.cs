@@ -13,25 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Covidas
+namespace Navigation.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WorldView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WorldView : UserControl
     {
-        public MainWindow()
+        public WorldView()
         {
             InitializeComponent();
-        }
-
-        private void ButtonAddName_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtName.Text) && !lstNames.Items.Contains(txtName.Text))
-            {
-                lstNames.Items.Add(txtName.Text);
-                txtName.Clear();
-            }
         }
     }
 }
