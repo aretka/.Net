@@ -26,7 +26,7 @@ namespace Navigation
         public MainWindow()
         {
             NavigationStore navigationStore = new NavigationStore();
-            navigationStore.CurrentViewModel = new LithuaniaViewModel(navigationStore);
+            navigationStore.CurrentViewModel = new EuropeViewModel(navigationStore);
             DataContext = new MainViewModel(navigationStore);
             InitializeComponent();
         }

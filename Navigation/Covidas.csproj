@@ -5,12 +5,23 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <DebugType>none</DebugType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Europe.jpg" />
+    <None Remove="Images\Lithuania.jpg" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Store\NavigationStore.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Europe.jpg" />
+    <Resource Include="Images\Lithuania.jpg" />
   </ItemGroup>
 
 </Project>
