@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" TextAlignment="Center" x:Name="headerName"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Margin="10" Width="150" Content="Home/World" Command="{Binding NavigateToWorldCommand}"/>
+            <Button Margin="10" Width="150" Content="Home/World" />
             <Button Margin="10" Width="150" Content="Europe" Command="{Binding NavigateToEuropeCommand}"/>
             <Button Margin="10" Width="150" Content="Lithuania" Command="{Binding NavigateToLithuaniaCommand}"/>
         </StackPanel>

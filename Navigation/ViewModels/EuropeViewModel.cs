@@ -12,10 +12,13 @@ namespace Navigation.ViewModels
     internal class EuropeViewModel : BaseViewModel
     {
         public ICommand NavigateToLithuaniaCommand { get; }
+        public ICommand NavigateToWorldCommand { get; }
+
 
         public EuropeViewModel(NavigationStore navigationStore)
         {
             NavigateToLithuaniaCommand = new NavigateCommand<LithuaniaViewModel>(navigationStore, () => new LithuaniaViewModel(navigationStore));
+            NavigateToWorldCommand = new NavigateCommand<WorldViewModel>(navigationStore, () => new WorldViewModel(navigationStore));
         }
     }
 }
