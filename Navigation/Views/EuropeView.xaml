@@ -14,7 +14,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextAlignment="Center" FontSize="20" FontWeight="Bold">THIS IS EUROPE</TextBlock>
+        <Button Grid.Row="0" Click="OpenModal" Content="Open modal"/>
+        <!--<TextBlock Grid.Row="0" TextAlignment="Center" FontSize="20" FontWeight="Bold">THIS IS EUROPE</TextBlock>-->
 
         <Image Grid.Row="1" Stretch="Fill">
             <Image.Source>

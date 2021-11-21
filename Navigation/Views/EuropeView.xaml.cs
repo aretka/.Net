@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Navigation.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace Navigation.Views
         public EuropeView()
         {
             InitializeComponent();
+        }
+
+        private void OpenModal(object sender, RoutedEventArgs e)
+        {
+            var countryData = new CountryData(10, 20, 30, 40);
+            var window = new CountryInfoDialog(countryData);
+
+            window.ShowDialog();
         }
     }
 }

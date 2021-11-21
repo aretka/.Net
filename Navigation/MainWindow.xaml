@@ -7,7 +7,8 @@
         xmlns:views="clr-namespace:Navigation.Views"
         xmlns:viewmodels="clr-namespace:Navigation.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="700" MaxWidth="1000">
     
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>

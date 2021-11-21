@@ -22,7 +22,6 @@ namespace Navigation
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             NavigationStore navigationStore = new NavigationStore();
