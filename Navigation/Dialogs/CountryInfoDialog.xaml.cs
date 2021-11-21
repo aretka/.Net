@@ -29,6 +29,7 @@ namespace Navigation.Dialogs
             totalCases.Text = countryData.totalCases.ToString();
             todaysDeaths.Text = countryData.todaysDeaths.ToString();
             totalDeaths.Text = countryData.totalDeaths.ToString();
+            Title = countryData.countryName + " Corona Info";
         }
 
         private void WindowLoaded()

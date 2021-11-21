@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Navigation.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner" 
-        Title="CountryInfoDialog" Height="auto" Width="auto"
+        Title="DIALOGBLIAT" Height="auto" Width="auto"
         ResizeMode="NoResize"
         MinHeight="200"
         MinWidth="300"

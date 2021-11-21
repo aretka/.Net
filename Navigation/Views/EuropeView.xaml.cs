@@ -28,7 +28,7 @@ namespace Navigation.Views
 
         private void OpenModal(object sender, RoutedEventArgs e)
         {
-            var countryData = new CountryData(10, 20, 30, 40);
+            var countryData = new CountryData(10, 20, 30, 40, "Latvia");
             var window = new CountryInfoDialog(countryData);
 
             window.ShowDialog();

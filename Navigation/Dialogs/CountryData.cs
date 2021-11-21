@@ -12,13 +12,15 @@ namespace Navigation.Dialogs
         public readonly int todaysCases;
         public readonly int totalDeaths;
         public readonly int todaysDeaths;
+        public readonly string countryName;
 
-        public CountryData(int totalCases, int todaysCases, int totalDeaths, int todaysDeaths)
+        public CountryData(int totalCases, int todaysCases, int totalDeaths, int todaysDeaths, string countryName)
         {
             this.totalCases = totalCases;
             this.todaysCases = todaysCases;
             this.totalDeaths = totalDeaths;
             this.todaysDeaths = todaysDeaths;
+            this.countryName = countryName;
         }
     }
 }
