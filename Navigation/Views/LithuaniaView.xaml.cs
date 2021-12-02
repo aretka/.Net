@@ -23,7 +23,6 @@ namespace Navigation.Views
         public LithuaniaView()
         {
             InitializeComponent();
-            headerName.Text = "LITHUANIA COVID INFO";
         }
     }
 }
