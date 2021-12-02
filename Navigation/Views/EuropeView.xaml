@@ -33,7 +33,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Click="OpenModal" Content="Open modal"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="EUROPE CORONA MAP" FontWeight="bold" FontSize="20"/>
         <!--<TextBlock Grid.Row="0" TextAlignment="Center" FontSize="20" FontWeight="Bold">THIS IS EUROPE</TextBlock>-->
         <Canvas Grid.Row="1" Grid.Column="0">
             <Image Width="1000" Height="650" Stretch="Fill">
@@ -43,14 +43,14 @@
             </Image>
             <Button
                 Style="{StaticResource MyButtonStyle}"
-                x:Name="PortugalButton"
+                x:Name="Portugal"
                 Canvas.Left="55" 
                 Canvas.Top="465"
                 Click="OpenModal"
                 />
             <Button
                 Style="{StaticResource MyButtonStyle}"
-                x:Name="SpainButton"
+                x:Name="Spain"
                 Canvas.Left="140" 
                 Canvas.Top="510"
                 Click="OpenModal"

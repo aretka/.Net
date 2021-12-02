@@ -29,12 +29,9 @@ namespace Navigation.Views
 
         private async void OpenModal(object sender, RoutedEventArgs e)
         {
-            var CovidInfo = await CovidProcessor.LoadSunInformation();
-
-           
-            Button Button = sender as Button;
-            var countryData = new CountryData(Convert.ToInt32(CovidInfo.cases), Convert.ToInt32(CovidInfo.tests), Convert.ToInt32(CovidInfo.deaths), Convert.ToInt32(CovidInfo.active), Button.Name);
-            var window = new CountryInfoDialog(countryData);
+            Button button = sender as Button;
+            var CovidInfo = await CovidProcessor.LoadSunInformation(button.Name);
+            var window = new CountryInfoDialog(CovidInfo, button.Name);
 
             window.ShowDialog();
         }

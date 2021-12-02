@@ -9,7 +9,6 @@ namespace Navigation.API_stuff
     public class CovidData
     {
         public object cases { get; set; }
-
         public object todayCases { get; set; }
         public object deaths { get; set; }
         public object todayDeaths { get; set; }

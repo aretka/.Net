@@ -44,16 +44,16 @@
 
         <!-- Corona case table -->
         <Label Grid.Column="0" Grid.Row="0">Total cases:</Label>
-        <TextBlock Name="todaysCases" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock Name="totalCases" Grid.Column="1" Grid.Row="0"/>
 
         <Label Grid.Column="0" Grid.Row="1">Total tests:</Label>
-        <TextBlock Name="totalCases" Grid.Column="1" Grid.Row="1" />
+        <TextBlock Name="totalTests" Grid.Column="1" Grid.Row="1" />
 
         <Label Grid.Column="0" Grid.Row="2">Total deaths:</Label>
-        <TextBlock Name="todaysDeaths" Grid.Column="1" Grid.Row="2" />
+        <TextBlock Name="totalDeaths" Grid.Column="1" Grid.Row="2" />
 
         <Label Grid.Column="0" Grid.Row="3">Active:</Label>
-        <TextBlock Name="totalDeaths" Grid.Column="1" Grid.Row="3" />
+        <TextBlock Name="activeCases" Grid.Column="1" Grid.Row="3" />
 
         <Button
             Grid.Column="0" 

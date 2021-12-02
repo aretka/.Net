@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Navigation.API_stuff;
 
 namespace Navigation.Dialogs
 {
@@ -20,16 +21,16 @@ namespace Navigation.Dialogs
     /// </summary>
     public partial class CountryInfoDialog : Window
     {
-        public CountryInfoDialog(CountryData countryData)
+        public CountryInfoDialog(CovidData covidData, string countryName)
         {
             InitializeComponent();
             WindowLoaded();
             Owner = App.Current.MainWindow;
-            todaysCases.Text = countryData.totalCases.ToString();
-            totalCases.Text = countryData.todaysCases.ToString();
-            todaysDeaths.Text = countryData.totalDeaths.ToString();
-            totalDeaths.Text = countryData.todaysDeaths.ToString();
-            Title = countryData.countryName + " Corona Info";
+            totalCases.Text = covidData.cases.ToString();
+            totalTests.Text = covidData.tests.ToString();
+            totalDeaths.Text = covidData.deaths.ToString();
+            activeCases.Text = covidData.active.ToString();
+            Title = countryName + " Corona Info";
         }
 
         private void WindowLoaded()

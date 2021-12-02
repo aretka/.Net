@@ -10,9 +10,10 @@ namespace Navigation.API_stuff
 {
     public class CovidProcessor
     {
-        public static async Task<CovidData> LoadSunInformation()
+        public static async Task<CovidData> LoadSunInformation(string countryName)
         {
-            string url = "https://corona.lmao.ninja/v2/countries/Spain?yesterday&strict&query%20";
+            
+            string url = "https://corona.lmao.ninja/v2/countries/" + countryName + "?yesterday&strict&query%20";
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
