@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Navigation.API_stuff;
 
 namespace Navigation.Views
 {
@@ -26,9 +27,13 @@ namespace Navigation.Views
             InitializeComponent();
         }
 
-        private void OpenModal(object sender, RoutedEventArgs e)
+        private async void OpenModal(object sender, RoutedEventArgs e)
         {
-            var countryData = new CountryData(10, 20, 30, 40, "Latvia");
+            var CovidInfo = await CovidProcessor.LoadSunInformation();
+
+           
+            Button Button = sender as Button;
+            var countryData = new CountryData(Convert.ToInt32(CovidInfo.cases), Convert.ToInt32(CovidInfo.tests), Convert.ToInt32(CovidInfo.deaths), Convert.ToInt32(CovidInfo.active), Button.Name);
             var window = new CountryInfoDialog(countryData);
 
             window.ShowDialog();

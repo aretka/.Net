@@ -25,10 +25,10 @@ namespace Navigation.Dialogs
             InitializeComponent();
             WindowLoaded();
             Owner = App.Current.MainWindow;
-            todaysCases.Text = countryData.todaysCases.ToString();
-            totalCases.Text = countryData.totalCases.ToString();
-            todaysDeaths.Text = countryData.todaysDeaths.ToString();
-            totalDeaths.Text = countryData.totalDeaths.ToString();
+            todaysCases.Text = countryData.totalCases.ToString();
+            totalCases.Text = countryData.todaysCases.ToString();
+            todaysDeaths.Text = countryData.totalDeaths.ToString();
+            totalDeaths.Text = countryData.todaysDeaths.ToString();
             Title = countryData.countryName + " Corona Info";
         }
 

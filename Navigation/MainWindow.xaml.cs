@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Navigation.ViewModels;
 using Navigation.Store;
+using Navigation.API_stuff;
 
 namespace Navigation
 {
@@ -27,6 +28,7 @@ namespace Navigation
             NavigationStore navigationStore = new NavigationStore();
             navigationStore.CurrentViewModel = new EuropeViewModel(navigationStore);
             DataContext = new MainViewModel(navigationStore);
+            ApiHelper.InitializeClient();
             InitializeComponent();
         }
     }
