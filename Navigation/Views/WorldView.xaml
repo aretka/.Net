@@ -8,6 +8,50 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
+        <Grid.Resources>
+            <Style x:Key="NavigationBtnActive" TargetType="Button">
+                <Setter Property="Background" Value="#E7D69E"/>
+                <Setter Property="BorderThickness" Value="0 0 0 3" />
+                <Setter Property="BorderBrush" Value="#A37C19" />
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="#A37C19" BorderThickness="0 0 0 3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#E0D1A1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="NavigationBtnInactive" TargetType="Button">
+                <Setter Property="Background" Value="#FFF6D6"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#F3E7BB"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -21,9 +65,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="World" />
-            <Button Grid.Column="1" Content="Europe" Command="{Binding NavigateToEuropeCommand}" />
-            <Button Grid.Column="2" Content="Lithuania" Command="{Binding NavigateToLithuaniaCommand}" />
+            <Button 
+                Style="{StaticResource NavigationBtnActive}"
+                Grid.Column="0" 
+                Content="World" />
+            <Button 
+                Style="{StaticResource NavigationBtnInactive}"
+                Grid.Column="1" 
+                Content="Europe" 
+                Command="{Binding NavigateToEuropeCommand}" />
+            <Button 
+                Style="{StaticResource NavigationBtnInactive}"
+                Grid.Column="2" 
+                Content="Lithuania" 
+                Command="{Binding NavigateToLithuaniaCommand}" />
         </Grid>
     </Grid>
 </UserControl>

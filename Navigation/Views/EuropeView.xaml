@@ -5,12 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Navigation.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1000">
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Background="#E7D69E">
+      
     <Grid>
         <Grid.Resources>
+            
             <Style x:Key="MyButtonStyle" TargetType="Button">
                 <Setter Property="OverridesDefaultStyle" Value="True"/>
-                <Setter Property="Width" Value="65"/>
+                <Setter Property="Width" Value="60"/>
                 <Setter Property="Height" Value="15"/>
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="Background" Value="Transparent"/>
@@ -26,6 +29,49 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            
+            <Style x:Key="NavigationBtnActive" TargetType="Button">
+                <Setter Property="Background" Value="#E7D69E"/>
+                <Setter Property="BorderThickness" Value="0 0 0 3" />
+                <Setter Property="BorderBrush" Value="#A37C19" />
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="#A37C19" BorderThickness="0 0 0 3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#E0D1A1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            
+            <Style x:Key="NavigationBtnInactive" TargetType="Button">
+                <Setter Property="Background" Value="#FFF6D6"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#F3E7BB"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            
         </Grid.Resources>
         
         <Grid.RowDefinitions>
@@ -44,8 +90,8 @@
             <Button
                 Style="{StaticResource MyButtonStyle}"
                 x:Name="Portugal"
-                Canvas.Left="55" 
-                Canvas.Top="465"
+                Canvas.Left="65" 
+                Canvas.Top="470"
                 Click="OpenModal"
                 />
             <Button
@@ -55,6 +101,163 @@
                 Canvas.Top="510"
                 Click="OpenModal"
                 />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="France"
+                Canvas.Left="260" 
+                Canvas.Top="400"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Germany"
+                Canvas.Left="370" 
+                Canvas.Top="350"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Poland"
+                Canvas.Left="470" 
+                Canvas.Top="330"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="UK"
+                Canvas.Left="260" 
+                Canvas.Top="290"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Ireland"
+                Canvas.Left="170" 
+                Canvas.Top="280"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Italy"
+                Canvas.Left="420" 
+                Canvas.Top="540"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Switzerland"
+                Canvas.Left="330" 
+                Canvas.Top="430"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Austria"
+                Canvas.Left="410" 
+                Canvas.Top="420"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Hungary"
+                Canvas.Left="470" 
+                Canvas.Top="435"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Greece"
+                Canvas.Left="520" 
+                Canvas.Top="570"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Serbia"
+                Canvas.Left="495" 
+                Canvas.Top="480"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Bulgaria"
+                Canvas.Left="580" 
+                Canvas.Top="505"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Romania"
+                Canvas.Left="540" 
+                Canvas.Top="445"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Moldova"
+                Canvas.Left="585" 
+                Canvas.Top="410"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Ukraine"
+                Canvas.Left="600" 
+                Canvas.Top="380"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Belarus"
+                Canvas.Left="575" 
+                Canvas.Top="320"
+                Click="OpenModal"
+                />
+            <!-- Baltic countries -->
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Lithuania"
+                Canvas.Left="520" 
+                Canvas.Top="280"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Latvia"
+                Canvas.Left="550" 
+                Canvas.Top="255"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Estonia"
+                Canvas.Left="530" 
+                Canvas.Top="230"
+                Click="OpenModal"
+                />
+            <!-- Scandiavian countries -->
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Norway"
+                Canvas.Left="380" 
+                Canvas.Top="170"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Sweden"
+                Canvas.Left="455" 
+                Canvas.Top="175"
+                Click="OpenModal"
+                />
+            <Button
+                Style="{StaticResource MyButtonStyle}"
+                x:Name="Finland"
+                Canvas.Left="540" 
+                Canvas.Top="155"
+                Click="OpenModal"
+                />
+
         </Canvas>
         
         <Grid Grid.Row="2" Height="30">
@@ -63,9 +266,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="World" Command="{Binding NavigateToWorldCommand}"/>
-            <Button Grid.Column="1" Content="Europe" />
-            <Button Grid.Column="2" Content="Lithuania" Command="{Binding NavigateToLithuaniaCommand}"/>
+            <Button 
+                Style="{StaticResource NavigationBtnInactive}"
+                Grid.Column="0" 
+                Content="World" 
+                Command="{Binding NavigateToWorldCommand}"/>
+            <Button 
+                Style="{StaticResource NavigationBtnActive}"
+                Grid.Column="1" 
+                Content="Europe" />
+            <Button 
+                Style="{StaticResource NavigationBtnInactive}"
+                Grid.Column="2" 
+                Content="Lithuania" 
+                Command="{Binding NavigateToLithuaniaCommand}"/>
         </Grid>
 
     </Grid>

@@ -42,6 +42,6 @@ namespace Navigation.Dialogs
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e) =>
-            DialogResult = true;
+            DialogResult = false;
     }
 }

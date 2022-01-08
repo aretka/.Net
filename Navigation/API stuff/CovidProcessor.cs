@@ -20,7 +20,6 @@ namespace Navigation.API_stuff
                 if (response.IsSuccessStatusCode)
                 {
                     CovidData result = await response.Content.ReadAsAsync<CovidData>();
-
                     return result;
                 }
                 else
