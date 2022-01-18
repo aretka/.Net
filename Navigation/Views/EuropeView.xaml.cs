@@ -30,7 +30,7 @@ namespace Navigation.Views
         private async void OpenModal(object sender, RoutedEventArgs e)
         {
             Button? button = sender as Button;
-            var CovidInfo = await CovidProcessor.LoadSunInformation(button.Name);
+            var CovidInfo = await CovidProcessor.LoadCountryData(button.Name);
             var window = new CountryInfoDialog(CovidInfo, button.Name);
 
             window.ShowDialog();

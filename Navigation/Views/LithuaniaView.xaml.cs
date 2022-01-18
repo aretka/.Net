@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
+using Navigation.API_stuff;
 
 namespace Navigation.Views
 {
@@ -22,33 +23,45 @@ namespace Navigation.Views
     /// </summary>
     public partial class LithuaniaView : UserControl
     {
+        public SeriesCollection SeriesCollection { get; set; }
         public LithuaniaView()
         {
             InitializeComponent();
+            LoadInfo();
+        }
+        public async void LoadInfo() {
+
+            var lithuaniaData = await CovidProcessor.LoadLithuaniaData();
             SeriesCollection = new SeriesCollection()
             {
                 new PieSeries
                 {
-                    Title = "First",
-                    Values = new ChartValues<double> { 124},
+                    Title = "Todays cases",
+                    Values = new ChartValues<int> { lithuaniaData.todayCases},
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Second",
-                    Values = new ChartValues<double> { 354},
+                    Title = "Todays recovered",
+                    Values = new ChartValues<int> { lithuaniaData.todayRecovered},
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Third",
-                    Values = new ChartValues<double> { 35},
+                    Title = "Todays deaths",
+                    Values = new ChartValues<int> { lithuaniaData.todayDeaths},
                     DataLabels = true
                 }
             };
-            CovidPieChart.Series = SeriesCollection;
-        }
-        public SeriesCollection SeriesCollection { get; set; }
 
+            cases.Text = lithuaniaData.cases.ToString();
+            deaths.Text = lithuaniaData.deaths.ToString();
+            recovered.Text = lithuaniaData.recovered.ToString();
+            active.Text = lithuaniaData.active.ToString();
+            critical.Text = lithuaniaData.critical.ToString();
+            tests.Text = lithuaniaData.tests.ToString();
+
+            pie_chart.Series = SeriesCollection;
+        }
     }
 }

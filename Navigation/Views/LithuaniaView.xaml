@@ -6,7 +6,7 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:Navigation.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800">
+      d:DesignHeight="700" d:DesignWidth="1000">
 
     <Grid>
         <Grid.Resources>
@@ -63,14 +63,48 @@
                 <BitmapImage UriSource="/Images/Lithuania.jpg"/>
             </Image.Source>
         </Image> -->
-        <lvc:PieChart Name="CovidPieChart" Grid.Row="1" LegendLocation="Bottom" Hoverable="True" Margin="40">
-            <lvc:PieChart.ChartLegend>
-                <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="10"/>
-            </lvc:PieChart.ChartLegend>
-            <lvc:PieChart.DataTooltip>
-                <lvc:DefaultTooltip BulletSize="20"/>
-            </lvc:PieChart.DataTooltip>
-        </lvc:PieChart>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="650"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <lvc:PieChart Grid.Column="0" Grid.RowSpan="8" Name="pie_chart" LegendLocation="Bottom" Hoverable="True" Margin="40 100 40 100">
+                <lvc:PieChart.ChartLegend>
+                    <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="10"/>
+                </lvc:PieChart.ChartLegend>
+                <lvc:PieChart.DataTooltip>
+                    <lvc:DefaultTooltip BulletSize="20"/>
+                </lvc:PieChart.DataTooltip>
+            </lvc:PieChart>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Cases:" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Deaths:" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="Recovered:" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="Active:" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="Critical:" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="Tests:" FontSize="20" Padding="10"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="cases" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="deaths" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="recovered" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="4" Grid.Column="2" x:Name="active" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="5" Grid.Column="2" x:Name="critical" FontSize="20" Padding="10"/>
+            <TextBlock Grid.Row="6" Grid.Column="2" x:Name="tests" FontSize="20" Padding="10"/>
+
+        </Grid>
+        
         
 
         <Grid Grid.Row="2" Height="30">
